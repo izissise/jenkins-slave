@@ -14,6 +14,9 @@ RUN mkdir -p /var/run/sshd
 # Install JDK 7 (latest edition)
 RUN apt-get install -y openjdk-7-jdk
 
+# Install git
+RUN apt-get install -y git
+
 # Add user jenkins to the image
 RUN adduser --quiet jenkins
 # Set password for the jenkins user (you may want to alter this).
