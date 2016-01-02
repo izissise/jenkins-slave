@@ -18,7 +18,6 @@ RUN apt-get update &&\
     apt-get clean -y && rm -rf /var/lib/apt/lists/*
 
 # Set user jenkins to the image
-RUN adduser --quiet jenkins &&\
-    echo "jenkins:jenkins" | chpasswd
+RUN echo "root:jenkins" | chpasswd
 
 CMD ["/usr/sbin/sshd", "-D"]
