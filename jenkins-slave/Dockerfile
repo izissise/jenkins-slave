@@ -2,6 +2,9 @@
 FROM ubuntu:trusty
 MAINTAINER Ervin Varga <ervin.varga@gmail.com>
 
+# Standard SSH port
+EXPOSE 22
+
 # Install and configure a basic SSH server
 RUN apt-get update &&\
     apt-get install -y openssh-server &&\
@@ -11,14 +14,11 @@ RUN apt-get update &&\
 
 # Install JDK 7 (latest edition)
 RUN apt-get update &&\
-    apt-get install -y openjdk-7-jdk &&\
+    apt-get install -y git openjdk-7-jdk &&\
     apt-get clean -y && rm -rf /var/lib/apt/lists/*
 
 # Set user jenkins to the image
 RUN adduser --quiet jenkins &&\
     echo "jenkins:jenkins" | chpasswd
-
-# Standard SSH port
-EXPOSE 22
 
 CMD ["/usr/sbin/sshd", "-D"]
