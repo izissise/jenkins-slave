@@ -1,6 +1,9 @@
-Docker Images Project
-=====================
+Jenkins Slave
+=============
 
-Contains various [Docker][1] build files for creating Docker images (base images, intermediate images, etc.). Each folder is designated to one particular image, and has a Dockerfile (besides other build related stuff). Every Dockerfile is well commented and should be consulted for more information what it represents.
+[Docker][1] container to build Jenkins projects inside.  
+
+Recommanded usage:  
+docker run --name jenkins-slave -v /var/run/docker.sock:/run/docker.sock -v $(which docker):/bin/docker izissise/jenkins-slave  
 
 [1]: http://docker.io
