@@ -14,6 +14,7 @@ RUN apt-get update &&\
     mkdir -p /var/run/sshd
 
 RUN curl -L https://github.com/docker/compose/releases/download/1.6.2/docker-compose-Linux-x86_64 > /usr/bin/docker-compose
+RUN chmod +x /usr/bin/docker-compose
 
 # Install JDK 7 (latest edition)
 RUN apt-get update &&\
