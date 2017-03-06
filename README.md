@@ -5,6 +5,6 @@ Jenkins Slave
 
 Recommanded usage:  
 ```
-docker run --name jenkins-slave -v /var/run/docker.sock:/run/docker.sock -v $(which docker):/bin/docker izissise/jenkins-slave  
+docker run --name jenkins-slave -v /var/run/docker.sock:/var/run/docker.sock -v $(which docker):/bin/docker izissise/jenkins-slave  
 ```
 [1]: http://docker.io
